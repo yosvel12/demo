@@ -1,0 +1,11 @@
+<div
+    class="blank-layout"
+    [class.card-borderd-theme]="themeService.isCardBorder()"
+    [class.card-border-radius]="themeService.isCardBorderRadius()"
+    [class.rtl-enabled]="themeService.isRTLEnabled()"
+>
+    <router-outlet />
+
+    <!-- Customizer Settings -->
+    <app-customizer-settings />
+</div>
