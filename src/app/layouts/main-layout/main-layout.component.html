@@ -1,0 +1,26 @@
+<div
+    [class.card-borderd-theme]="themeService.isCardBorder()"
+    [class.card-border-radius]="themeService.isCardBorderRadius()"
+    [class.rtl-enabled]="themeService.isRTLEnabled()"
+>
+
+    <!-- Sidebar -->
+    <app-sidebar />
+
+    <!-- Main Content -->
+    <div
+        class="main-content transition d-flex flex-column"
+        [ngClass]="{'active': isSidebarToggled}"
+        [class.right-sidebar]="themeService.isRightSidebar()"
+        [class.hide-sidebar]="themeService.isHideSidebar()"
+    >
+        <app-header />
+        <router-outlet />
+        <div class="flex-grow-1"></div>
+        <app-footer />
+    </div>
+
+    <!-- Customizer Settings -->
+    <app-customizer-settings />
+
+</div>
